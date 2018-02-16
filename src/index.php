@@ -20,6 +20,7 @@
 <body>
 
 <!-- include the form from Mireille -->
+<?php include 'form.php'?>
 <!-- include the table.php -->
 
 
