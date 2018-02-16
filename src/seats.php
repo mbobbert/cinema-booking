@@ -16,7 +16,6 @@ $statement = $pdo->query("SELECT token FROM seats");
 while (false !== ($token = $statement->fetchColumn())) {
     $seats[]= $token;
 }
-var_dump($seats);
 
 foreach($seats as $seat)
 {
@@ -38,7 +37,19 @@ foreach($seats as $seat)
 // $statement = $pdo->query("SELECT bookings.SeatNumber FROM `bookings` WHERE bookings.SeatNumber !=0");
 // while (false !== ($seat_number = $statement->fetchColumn())) {
 // $booked[]= $seat_number;}
-// var_dump($booked);
+
+
+// // loop through the array to update the seats table
+//     //   UPDATE `seats` SET `token`=1 WHERE id = 3
+
+//       foreach($booked as $bookedseat){
+
+
+//           $statement = $pdo->prepare("UPDATE `seats` SET `token`= 1 WHERE id = ?");
+//           $result = $statement->execute([$bookedseat]);
+//         }
+
+
 
 
 

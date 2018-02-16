@@ -26,13 +26,17 @@ if (count($_POST) > 0)
       // read from the Bookings table to have an array
       //SELECT bookings.SeatNumber FROM `bookings` WHERE bookings.SeatNumber !=0
 
-      // $statement = $pdo->query("SELECT bookings.SeatNumber FROM `bookings` WHERE bookings.SeatNumber !=0");
-      // while (false !== ($seat_number = $statement->fetchColumn())) {
-      // $booked[]= $seat_number;
-
-
+      $statement = $pdo->query("SELECT bookings.SeatNumber FROM `bookings` WHERE bookings.SeatNumber !=0");
+      while (false !== ($seat_number = $statement->fetchColumn())) {
+      $booked[]= $seat_number;}
 
       //loop through the array to update the seats table
+      //UPDATE `seats` SET `token`=1 WHERE id = 3
+
+      foreach($booked as $bookedseat){
+        $statement = $pdo->prepare("UPDATE `seats` SET `token`= 1 WHERE id = ?");
+        $result = $statement->execute([$bookedseat]);
+      }
 
       $statement = $pdo->prepare('UPDATE seats SET
 
