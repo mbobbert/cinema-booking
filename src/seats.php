@@ -18,6 +18,20 @@ while (false !== ($token = $statement->fetchColumn())) {
 }
 var_dump($seats);
 
+foreach($seats as $seat)
+{
+    $seatstatus = 'available';
+
+    if ($seat == 1){
+        $seatstatus = 'occupied';
+    }
+
+    echo '<img src="img/seat.png" alt="">
+    <div class="'.
+    $seatstatus
+    .'"></div>';
+}
+
 
 ?>
 </table>
