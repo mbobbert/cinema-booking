@@ -1,1 +1,1 @@
-# cinema-booking
+Cinema-booking project for hackathon 3
