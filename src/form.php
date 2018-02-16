@@ -20,15 +20,12 @@ if (count($_POST) > 0)
       $result = $statement->execute([$name, $email, $seatNumber]);
   header('Location: ?success=yes');
   }
-
-
 }
-
-
-
-
 var_dump($_POST);
 
+$success = filter_input(INPUT_GET, 'success');
+if ($success == 'no') echo '<p style="color: red">fail</p>';
+if ($success == 'yes') echo '<p style="color: green">success</p>';
 ?>
 
 
