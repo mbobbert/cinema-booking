@@ -5,19 +5,19 @@ $pdo = new PDO(
 );
 
 
-if (count($_POST) >0)
+if (count($_POST) > 0)
 {
   $seatNumber = filter_input(INPUT_POST, 'seatNumber', FILTER_VALIDATE_INT);
   $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL); // is the given value a email?
   $name = filter_input(INPUT_POST, 'name');
 
-  if (!$seatNumber || !$email || $name =='')
+  if (!$seatNumber || !$email || $name == ' ')
   {
       header('Location: ?success=no');
   } else {
       //future INSERT
-      $statement = $dbh->prepare('INSERT INTO bookings (Name, Email, SeatNumber ) VALUES (?, ?, ?)');
-  $result = $statement->execute([$name, $email, $seatNumber]);
+      $statement = $pdo->prepare('INSERT INTO bookings (Name, Email, SeatNumber ) VALUES (?, ?, ?)');
+      $result = $statement->execute([$name, $email, $seatNumber]);
   header('Location: ?success=yes');
   }
 
