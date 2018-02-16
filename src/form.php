@@ -15,9 +15,32 @@ if (count($_POST) > 0)
   {
       header('Location: ?success=no');
   } else {
-      //future INSERT
+      //future INSERT into bookings table
       $statement = $pdo->prepare('INSERT INTO bookings (Name, Email, SeatNumber ) VALUES (?, ?, ?)');
       $result = $statement->execute([$name, $email, $seatNumber]);
+      //update the Seats table
+
+      //An array of all the seats that were booked in bookings:
+      $booked = [];
+
+      // read from the Bookings table to have an array
+      //SELECT bookings.SeatNumber FROM `bookings` WHERE bookings.SeatNumber !=0
+
+      // $statement = $pdo->query("SELECT bookings.SeatNumber FROM `bookings` WHERE bookings.SeatNumber !=0");
+      // while (false !== ($seat_number = $statement->fetchColumn())) {
+      // $booked[]= $seat_number;
+
+
+
+      //loop through the array to update the seats table
+
+      $statement = $pdo->prepare('UPDATE seats SET
+
+      WHERE bookings.
+
+       (Name, Email, SeatNumber ) VALUES (?, ?, ?)');
+      $result = $statement->execute([$name, $email, $seatNumber]);
+
   header('Location: ?success=yes');
   }
 }

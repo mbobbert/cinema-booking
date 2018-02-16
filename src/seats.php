@@ -32,6 +32,16 @@ foreach($seats as $seat)
     .'"></div>';
 }
 
+// testing if the next few lines work
+
+// $booked = [];
+// $statement = $pdo->query("SELECT bookings.SeatNumber FROM `bookings` WHERE bookings.SeatNumber !=0");
+// while (false !== ($seat_number = $statement->fetchColumn())) {
+// $booked[]= $seat_number;}
+// var_dump($booked);
+
+
+
 
 ?>
 </table>
