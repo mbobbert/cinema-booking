@@ -18,9 +18,37 @@
     <script src="main.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+
+    button {
+        background:#1c1c1c;
+        border-radius: 5px;
+        color: lightgray;
+        margin-top: 10px;
+    }
+    form div {
+        width: 25%;
+        display: flex;
+        justify-content: space-between;
+    }
+    input {
+        background: #1c1c1c;
+        color:white;
+    }
     body{
         background-color: black;
-        color: white;
+        color: lightgray;
+    }
+    a {
+        color: #7f7f7f;
+    }
+    main {
+        width: 80%;
+        margin: 0px auto;
+        background-image: url(img/bgr.jpg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
     }
     img {
         width: 40px;
@@ -28,8 +56,8 @@
     }
 
     #seat-area {
-        margin-left: 50vw;
-        margin-right: 20vw;
+        margin-left: 40vw;
+        margin-right: 0vw;
         display: flex;
         flex-wrap: wrap;
     }
@@ -46,15 +74,22 @@
         height: 10px;
         background-color: red;
     }
+    h1{
+        text-align: center;
+        color: gold;
+    }
     </style>
 </head>
 <body>
 
-<!-- include the form from Mireille -->
-<?php include 'form.php'?>
-<!-- include the table.php -->
-<?php include 'table.php'?>
-<?php include 'seats.php'?>
+<main>
+    <h1>The Cine Booking System</h1>
+    <!-- include the form from Mireille -->
+    <?php include 'form.php'?>
+    <!-- include the table.php -->
+    <?php include 'table.php'?>
+    <?php include 'seats.php'?>
+</main>
 
 </body>
 </html>
