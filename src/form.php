@@ -48,7 +48,7 @@ if (count($_POST) > 0)
   header('Location: ?success=yes');
   }
 }
-var_dump($_POST);
+
 
 $success = filter_input(INPUT_GET, 'success');
 if ($success == 'no') echo '<p style="color: red">fail</p>';
